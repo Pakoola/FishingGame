@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://sh8rrw51noh" path="res://Assets/3 Objects/Pier_Tiles.png" id="2_ws3em"]
 [ext_resource type="Texture2D" uid="uid://bt6gwouvqvjmd" path="res://Assets/3 Objects/Water.png" id="3_78uu4"]
 [ext_resource type="PackedScene" uid="uid://c6c4k62ct1gn0" path="res://Scene/fisherman.tscn" id="4_ws3em"]
+[ext_resource type="PackedScene" uid="uid://b5jpefuv27rlu" path="res://Scene/boat.tscn" id="5_78uu4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sa811"]
 texture = ExtResource("1_xtak6")
@@ -626,3 +627,6 @@ tile_set = SubResource("TileSet_esf6n")
 
 [node name="Fisherman" parent="." unique_id=1331216439 instance=ExtResource("4_ws3em")]
 position = Vector2(147, 461)
+
+[node name="Boat" parent="." unique_id=52561043 instance=ExtResource("5_78uu4")]
+position = Vector2(207, 536)

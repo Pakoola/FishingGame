@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b5jpefuv27rlu"]
+
+[ext_resource type="Texture2D" uid="uid://ccho1l0tnj0fg" path="res://Assets/3 Objects/Boat.png" id="1_annr2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esf6n"]
+size = Vector2(70, 14)
+
+[node name="Boat" type="CharacterBody2D" unique_id=52561043]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1841635413]
+texture = ExtResource("1_annr2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1847369600]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_esf6n")
