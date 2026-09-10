@@ -40,4 +40,4 @@ shape = SubResource("CircleShape2D_esf6n")
 position = Vector2(-30, -15)
 shape = SubResource("RectangleShape2D_sxk5m")
 
-[connection signal="area_entered" from="EnterArea" to="." method="_on_enter_area_area_entered"]
+[connection signal="body_entered" from="EnterArea" to="." method="_on_enter_area_body_entered"]

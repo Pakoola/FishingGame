@@ -210,14 +210,14 @@ height = 34.0
 [node name="Fisherman" type="CharacterBody2D" unique_id=1331216439]
 script = ExtResource("1_jk0s3")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1890338523]
+[node name="Animation" type="AnimatedSprite2D" parent="." unique_id=1890338523]
 unique_name_in_owner = true
 texture_filter = 1
 position = Vector2(0, -25)
 sprite_frames = SubResource("SpriteFrames_sxk5m")
 animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.62134326
+frame_progress = 0.8547918
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=701440371]
 position = Vector2(0, -18)
