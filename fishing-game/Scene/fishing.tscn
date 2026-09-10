@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://caw7lj41mpr71"]
+
+[node name="Fishing" type="Node2D" unique_id=27252990]
+
+[node name="Background" type="ColorRect" parent="." unique_id=884181210]
+offset_right = 1151.0
+offset_bottom = 642.0
+color = Color(0.6509804, 1, 1, 1)
