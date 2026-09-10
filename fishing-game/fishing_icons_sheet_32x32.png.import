@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvtmfl2ejjp68"
-path="res://.godot/imported/fishing_icons_sheet_32x32.png-864994444ba10885b7948a32ad9a01b1.ctex"
+path="res://.godot/imported/fishing_icons_sheet_32x32.png-dfd019ebb1ec86a77446e71cb593b0de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scene/fishing_icons_sheet_32x32.png"
-dest_files=["res://.godot/imported/fishing_icons_sheet_32x32.png-864994444ba10885b7948a32ad9a01b1.ctex"]
+source_file="res://fishing_icons_sheet_32x32.png"
+dest_files=["res://.godot/imported/fishing_icons_sheet_32x32.png-dfd019ebb1ec86a77446e71cb593b0de.ctex"]
 
 [params]
 
