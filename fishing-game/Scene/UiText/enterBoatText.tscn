@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ckdmsd2nw2ivo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ifgea"]
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" unique_id=1821196098]
+offset_right = 218.0
+offset_bottom = 23.0
+text = "Press \"E\" to enter the boat"
+label_settings = SubResource("LabelSettings_ifgea")
+horizontal_alignment = 1
