@@ -1,8 +1,13 @@
 extends CharacterBody2D
 
 var speed: float = 150.0
-var jump_speed: float = -150.0
+var jump_speed: float = -200.0
 var isInBoat: bool = false
+
+# TODO: How do I find Fisherman in this scene?
+# 1. I want to get the reference to fisherman
+# 2. Move player position (locked) to the "seat" collision area.
+# Optional: Destroy boat and fisherman and use a new scene for boat + fisherman
 
 func _physics_process(delta):
 	if !isInBoat:
@@ -26,3 +31,6 @@ func _physics_process(delta):
 			%Animation.play("idle")
 			
 		move_and_slide()
+
+func enterBoat() -> void:
+	print("test")

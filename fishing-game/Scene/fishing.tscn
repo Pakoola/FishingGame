@@ -664,10 +664,10 @@ tile_map_data = PackedByteArray("AAAAAB4AAgAAAAAAAAAAAB8AAgAAAAIAAAAAACAAAgAAAAM
 tile_set = SubResource("TileSet_esf6n")
 
 [node name="Fisherman" parent="." unique_id=1331216439 instance=ExtResource("4_ws3em")]
-position = Vector2(43, 484)
+position = Vector2(43, 489)
 
 [node name="Boat" parent="." unique_id=52561043 instance=ExtResource("5_78uu4")]
-position = Vector2(233, 484)
+position = Vector2(475, 488)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1753440087]
 
