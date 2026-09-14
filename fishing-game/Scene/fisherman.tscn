@@ -213,19 +213,22 @@ script = ExtResource("1_jk0s3")
 
 [node name="Animation" type="AnimatedSprite2D" parent="." unique_id=1890338523]
 unique_name_in_owner = true
+z_index = 4
+y_sort_enabled = true
 texture_filter = 1
 position = Vector2(0, -25)
 sprite_frames = SubResource("SpriteFrames_sxk5m")
-animation = &"walk"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.8547918
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=701440371]
+visible = false
 position = Vector2(0, -18)
 shape = SubResource("CapsuleShape2D_icn4t")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1557451731]
+[node name="Area2D" type="Area2D" parent="." unique_id=1557451731 groups=["fisherman"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=701814025]
+visible = false
 position = Vector2(0, -18)
 shape = SubResource("CapsuleShape2D_icn4t")

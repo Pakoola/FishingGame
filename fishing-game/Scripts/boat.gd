@@ -1,39 +1,50 @@
+# boat.gd
 extends CharacterBody2D
 
-@export var GRAVITY:float = 100.0
-@onready var enter_boat_label: Label = $"../CanvasLayer/enterBoatText"
+@onready var seat_marker: Marker2D = $SeatMarker
+@onready var interact_area: Area2D = $InteractArea
 
-var inBoatArea: bool = false
+var fisherman_in_range: Node2D = null
+var occupant: Node2D = null
 
-func _ready():
-	pass
+var row_speed := 200.0
 
-func _physics_process(delta):
-	
-	# TODO: This isnt working. I need to add it to the scene tree or something. Idk
-	if Input.is_action_pressed("interact") && inBoatArea:
-		spawn_boat()
-		
-	velocity.y += delta * GRAVITY
+func _ready() -> void:
+	interact_area.body_entered.connect(_on_body_entered)
+	interact_area.body_exited.connect(_on_body_exited)
 
-	var motion = velocity * delta
-	move_and_collide(motion)
+func _on_body_entered(body: Node2D) -> void:
+	if body.name == "Fisherman":
+		fisherman_in_range = body
 
-func spawn_boat():
-	var FISHING_BOAT = preload("uid://kw1odqxun7d3").instantiate()
-	FISHING_BOAT.position = Vector2(320, 504)
-	print(FISHING_BOAT.position)
-	add_child(get_tree().get_root().get_node("/FishingScene"))
-	#queue_free();
+func _on_body_exited(body: Node2D) -> void:
+	if body == fisherman_in_range:
+		fisherman_in_range = null
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact"):
+		if occupant == null and fisherman_in_range != null:
+			_board(fisherman_in_range)
+		elif occupant != null:
+			_disembark()
 
-func _on_enter_area_body_entered(body: Node2D) -> void:
-	if body.name == "Fisherman" && enter_boat_label:
-		inBoatArea = true
-		enter_boat_label.visible = true
-	
+func _board(fisherman: Node2D) -> void:
+	occupant = fisherman
+	fisherman.state = fisherman.State.IN_BOAT
+	fisherman.current_boat = self
+	fisherman.velocity = Vector2.ZERO # stop any residual movement
 
-func _on_enter_area_body_exited(body: Node2D) -> void:
-	if body.name == "Fisherman" && enter_boat_label:
-		inBoatArea = false
-		enter_boat_label.visible = false
+func _disembark() -> void:
+	occupant.state = occupant.State.ON_FOOT
+	occupant.global_position = seat_marker.global_position + Vector2(0, 20) # step off to the side
+	occupant.current_boat = null
+	occupant = null
+
+func _physics_process(delta: float) -> void:
+	if occupant != null:
+		var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		velocity = input_dir * row_speed
+		move_and_slide()
+
+		# Keep the fisherman glued to the seat
+		occupant.global_position = seat_marker.global_position

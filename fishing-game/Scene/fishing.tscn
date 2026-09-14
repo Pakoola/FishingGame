@@ -667,7 +667,7 @@ tile_set = SubResource("TileSet_esf6n")
 position = Vector2(43, 489)
 
 [node name="Boat" parent="." unique_id=52561043 instance=ExtResource("5_78uu4")]
-position = Vector2(475, 488)
+position = Vector2(249, 488)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1753440087]
 
