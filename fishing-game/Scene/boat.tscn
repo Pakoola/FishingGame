@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b5jpefuv27rlu"]
 
 [ext_resource type="Texture2D" uid="uid://ccho1l0tnj0fg" path="res://Assets/3 Objects/Boat.png" id="1_annr2"]
-[ext_resource type="Script" uid="uid://777rs3fvfcuh" path="res://Scene/boat.gd" id="1_ng3vx"]
+[ext_resource type="Script" uid="uid://777rs3fvfcuh" path="res://Scripts/boat.gd" id="1_ng3vx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esf6n"]
 size = Vector2(65.5, 11)
@@ -9,13 +9,14 @@ size = Vector2(65.5, 11)
 [sub_resource type="CircleShape2D" id="CircleShape2D_esf6n"]
 radius = 33.06055
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxk5m"]
-size = Vector2(20, 24)
-
 [node name="Boat" type="CharacterBody2D" unique_id=52561043]
 script = ExtResource("1_ng3vx")
 
+[node name="SeatMarker" type="Marker2D" parent="." unique_id=959575284]
+position = Vector2(0, -6)
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1841635413]
+unique_name_in_owner = true
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_annr2")
@@ -26,18 +27,11 @@ position = Vector2(-4.5, 5)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_esf6n")
 
-[node name="EnterArea" type="Area2D" parent="." unique_id=731400907]
-visible = false
+[node name="InteractArea" type="Area2D" parent="." unique_id=731400907 groups=["fisherman"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnterArea" unique_id=1358353877]
-visible = false
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=1358353877]
 position = Vector2(0, -16)
 shape = SubResource("CircleShape2D_esf6n")
 
-[node name="BoatSeat" type="Area2D" parent="." unique_id=1936142028]
-
-[node name="SeatCollisionArea" type="CollisionShape2D" parent="BoatSeat" unique_id=506844410]
-position = Vector2(-30, -15)
-shape = SubResource("RectangleShape2D_sxk5m")
-
-[connection signal="body_entered" from="EnterArea" to="." method="_on_enter_area_body_entered"]
+[connection signal="body_entered" from="InteractArea" to="." method="_on_enter_area_body_entered"]
+[connection signal="body_exited" from="InteractArea" to="." method="_on_enter_area_body_exited"]

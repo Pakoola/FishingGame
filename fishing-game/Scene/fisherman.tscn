@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c6c4k62ct1gn0"]
 
-[ext_resource type="Script" uid="uid://dyl0t7l0tr6kg" path="res://Scene/fisherman.gd" id="1_jk0s3"]
+[ext_resource type="Script" uid="uid://dyl0t7l0tr6kg" path="res://Scripts/fisherman.gd" id="1_jk0s3"]
 [ext_resource type="Texture2D" uid="uid://bc8abnecsr0pu" path="res://Assets/1 Fisherman/Fisherman_fish.png" id="2_nho7b"]
 [ext_resource type="Texture2D" uid="uid://ci61y18j567hx" path="res://Assets/1 Fisherman/Fisherman_hook.png" id="3_poiwk"]
 [ext_resource type="Texture2D" uid="uid://ew3fq8wu63l5" path="res://Assets/1 Fisherman/Fisherman_idle.png" id="4_dhu07"]
@@ -208,23 +208,27 @@ radius = 13.0
 height = 34.0
 
 [node name="Fisherman" type="CharacterBody2D" unique_id=1331216439]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_jk0s3")
 
 [node name="Animation" type="AnimatedSprite2D" parent="." unique_id=1890338523]
 unique_name_in_owner = true
+z_index = 4
+y_sort_enabled = true
 texture_filter = 1
 position = Vector2(0, -25)
 sprite_frames = SubResource("SpriteFrames_sxk5m")
-animation = &"walk"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.8547918
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=701440371]
+visible = false
 position = Vector2(0, -18)
 shape = SubResource("CapsuleShape2D_icn4t")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1557451731]
+[node name="Area2D" type="Area2D" parent="." unique_id=1557451731 groups=["fisherman"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=701814025]
+visible = false
 position = Vector2(0, -18)
 shape = SubResource("CapsuleShape2D_icn4t")

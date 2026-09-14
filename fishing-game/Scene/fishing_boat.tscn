@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://kw1odqxun7d3"]
+
+[ext_resource type="Texture2D" uid="uid://ccho1l0tnj0fg" path="res://Assets/3 Objects/Boat.png" id="1_0y5xv"]
+[ext_resource type="Script" uid="uid://dobd1sv4dnc3t" path="res://Scripts/fishing_boat.gd" id="1_hn1lw"]
+[ext_resource type="Texture2D" uid="uid://cdnxlv4osaebu" path="res://Assets/1 Fisherman/Fisherman_row.png" id="2_hn1lw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esf6n"]
+size = Vector2(64.66667, 11.333334)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mgsd"]
+atlas = ExtResource("2_hn1lw")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aewwf"]
+atlas = ExtResource("2_hn1lw")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjirv"]
+atlas = ExtResource("2_hn1lw")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxlls"]
+atlas = ExtResource("2_hn1lw")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sxk5m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mgsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aewwf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjirv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxlls")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FishingBoat" type="CharacterBody2D" unique_id=462389100]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_hn1lw")
+
+[node name="FishingBoatCollision" type="CollisionShape2D" parent="." unique_id=219034657]
+unique_name_in_owner = true
+position = Vector2(-2.3333316, 3.666667)
+shape = SubResource("RectangleShape2D_esf6n")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1732950590]
+texture = ExtResource("1_0y5xv")
+
+[node name="FishermanRowing" type="AnimatedSprite2D" parent="." unique_id=1639313787]
+unique_name_in_owner = true
+position = Vector2(3, -10)
+sprite_frames = SubResource("SpriteFrames_sxk5m")
+frame_progress = 0.026811196
