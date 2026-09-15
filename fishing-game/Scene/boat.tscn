@@ -13,7 +13,7 @@ radius = 33.06055
 script = ExtResource("1_ng3vx")
 
 [node name="SeatMarker" type="Marker2D" parent="." unique_id=959575284]
-position = Vector2(0, -6)
+position = Vector2(0, -2.555)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1841635413]
 unique_name_in_owner = true
@@ -23,13 +23,16 @@ texture = ExtResource("1_annr2")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1847369600]
+visible = false
 position = Vector2(-4.5, 5)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_esf6n")
 
 [node name="InteractArea" type="Area2D" parent="." unique_id=731400907 groups=["fisherman"]]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=1358353877]
+visible = false
 position = Vector2(0, -16)
 shape = SubResource("CircleShape2D_esf6n")
 
