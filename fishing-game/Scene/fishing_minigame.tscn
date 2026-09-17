@@ -2,9 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bv57x8ju4wq01" path="res://Scripts/fishing_minigame.gd" id="1_tfknp"]
 
-[node name="FishingMinigame" type="Node2D" unique_id=1756507049]
+[sub_resource type="GDScript" id="GDScript_tfknp"]
+script/source = "extends VSlider
+"
+
+[node name="FishingSliderMinigame" type="Node2D" unique_id=1756507049]
 y_sort_enabled = true
 script = ExtResource("1_tfknp")
+fishDifficultyProp = "EASY"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1283920431]
 offset_right = 18.0
@@ -29,6 +34,10 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 accessibility_name = "fishing_mingame"
 rounded = true
+tick_count = 10
+ticks_on_borders = true
+ticks_position = 3
+script = SubResource("GDScript_tfknp")
 
 [node name="HookTimer" type="Timer" parent="." unique_id=505278071]
 one_shot = true
@@ -45,4 +54,5 @@ grow_horizontal = 0
 size_flags_horizontal = 4
 text = "Fish Caught!"
 
+[connection signal="value_changed" from="ColorRect/VSlider" to="." method="_on_v_slider_value_changed"]
 [connection signal="timeout" from="HookTimer" to="." method="_on_hook_timer_timeout"]
