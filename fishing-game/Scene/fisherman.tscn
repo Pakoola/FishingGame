@@ -207,7 +207,7 @@ animations = [{
 radius = 13.0
 height = 34.0
 
-[node name="Fisherman" type="CharacterBody2D" unique_id=1331216439 groups=["fisherman"]]
+[node name="Fisherman" type="CharacterBody2D" unique_id=1331216439]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_jk0s3")
 

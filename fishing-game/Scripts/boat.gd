@@ -37,7 +37,7 @@ func _board(fisherman: CharacterBody2D) -> void:
 func _disembark() -> void:
 	occupant.state = occupant.State.ON_FOOT
 	occupant.current_boat = null
-	occupant.position = seat_marker.global_position + Vector2(0, -50) # step off to the side
+	occupant.position = seat_marker.global_position + Vector2(0, 0) # step off to the side
 	occupant = null
 	
 

@@ -13,16 +13,12 @@ config_version=5
 config/name="FishingGame"
 run/main_scene="uid://caw7lj41mpr71"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://dnh6n2j73td7e"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
-
-[global_group]
-
-fisherman=""
 
 [input]
 

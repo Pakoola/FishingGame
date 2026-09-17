@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dj1ijie5n3kf0"]
+
+[ext_resource type="Script" uid="uid://bv57x8ju4wq01" path="res://Scripts/fishing_minigame.gd" id="1_tfknp"]
+
+[node name="FishingMinigame" type="Node2D" unique_id=1756507049]
+y_sort_enabled = true
+script = ExtResource("1_tfknp")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1283920431]
+offset_right = 18.0
+offset_bottom = 94.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VSlider" type="VSlider" parent="ColorRect" unique_id=1070559550]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -45.5
+offset_right = 8.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+accessibility_name = "fishing_mingame"
+rounded = true
+
+[node name="HookTimer" type="Timer" parent="." unique_id=505278071]
+one_shot = true
+
+[node name="Fish Outcome" type="Label" parent="." unique_id=992660583]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -95.0
+offset_bottom = 23.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+text = "Fish Caught!"
+
+[connection signal="timeout" from="HookTimer" to="." method="_on_hook_timer_timeout"]
