@@ -6,6 +6,7 @@ extends Node2D
 @onready var v_slider: VSlider = $ColorRect/VSlider
 @onready var hook_timer: Timer = $HookTimer
 @onready var color_rect: ColorRect = $ColorRect
+@onready var vslider_value: Label = $VsliderValue
 
 var fishStrength: int
 var fishingCaught: bool = false
@@ -19,6 +20,7 @@ var fish_difficulty = {
 
 
 func _ready() -> void:
+	vslider_value.visible = true
 	var fishDifficulty = fish_difficulty[fishDifficultyProp]
 	fishStrength = randi_range(1, 100)
 	hook_timer.start(fishStrength * .05 * fishDifficulty) 
@@ -49,6 +51,7 @@ func check_catch() -> void:
 
 func _on_v_slider_value_changed(value: float) -> void:
 	value = int(value)
+	vslider_value.text = str(value)
 	if fishStrength == value:
 		color_rect.color = Color(0.152, 0.984, 0.69, 1.0)
 	elif value <= fishStrength + 5 and value >= fishStrength - 5:

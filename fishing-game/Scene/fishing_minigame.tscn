@@ -45,14 +45,28 @@ one_shot = true
 [node name="Fish Outcome" type="Label" parent="." unique_id=992660583]
 unique_name_in_owner = true
 visible = false
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -95.0
-offset_bottom = 23.0
-grow_horizontal = 0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.5
+offset_top = -23.0
+offset_right = 47.5
+grow_horizontal = 2
+grow_vertical = 0
 size_flags_horizontal = 4
 text = "Fish Caught!"
+
+[node name="VsliderValue" type="Label" parent="." unique_id=1142579783]
+visible = false
+offset_left = 18.0
+offset_top = 34.0
+offset_right = 40.0
+offset_bottom = 57.0
+size_flags_horizontal = 4
+text = "0"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="value_changed" from="ColorRect/VSlider" to="." method="_on_v_slider_value_changed"]
 [connection signal="timeout" from="HookTimer" to="." method="_on_hook_timer_timeout"]
