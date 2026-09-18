@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dj1ijie5n3kf0"]
 
 [ext_resource type="Script" uid="uid://bv57x8ju4wq01" path="res://Scripts/fishing_minigame.gd" id="1_tfknp"]
+[ext_resource type="AudioStream" uid="uid://vdhfqsuryno5" path="res://Assets/5 Sounds/DING.mp3" id="2_go3f3"]
+[ext_resource type="AudioStream" uid="uid://coose5gqd4ix0" path="res://Assets/5 Sounds/SQUEAKY TOY.mp3" id="3_w6lhc"]
 
 [sub_resource type="GDScript" id="GDScript_tfknp"]
 script/source = "extends VSlider
@@ -67,6 +69,14 @@ offset_bottom = 57.0
 size_flags_horizontal = 4
 text = "0"
 metadata/_edit_use_anchors_ = true
+
+[node name="CaughtFishSound" type="AudioStreamPlayer2D" parent="." unique_id=931621710]
+process_mode = 1
+stream = ExtResource("2_go3f3")
+
+[node name="FailedCatchFishSound" type="AudioStreamPlayer2D" parent="." unique_id=1202994795]
+process_mode = 1
+stream = ExtResource("3_w6lhc")
 
 [connection signal="value_changed" from="ColorRect/VSlider" to="." method="_on_v_slider_value_changed"]
 [connection signal="timeout" from="HookTimer" to="." method="_on_hook_timer_timeout"]

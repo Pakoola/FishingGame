@@ -41,12 +41,15 @@ func check_catch() -> void:
 		$"%Fish Outcome".text = "Fish Caught!"
 		%"Fish Outcome".visible = true
 		hook_timer.stop()
+		$CaughtFishSound.play()
 		color_rect.visible = false
+		
 	else:
 		fishingCaught = false
 		$"%Fish Outcome".text = "Fish escaped..."
 		%"Fish Outcome".visible = true
 		color_rect.visible = false
+		$FailedCatchFishSound.play()
 		#queue_free()
 
 func _on_v_slider_value_changed(value: float) -> void:
