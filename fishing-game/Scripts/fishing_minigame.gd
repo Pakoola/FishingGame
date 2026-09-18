@@ -26,6 +26,7 @@ func _ready() -> void:
 	hook_timer.start(fishStrength * .05 * fishDifficulty) 
 	print(hook_timer.time_left)
 	#hook_timer.start(fishStrength * 3)
+	$heartbeat
 	
 func _process(delta: float) -> void:
 	pass
@@ -43,7 +44,7 @@ func check_catch() -> void:
 		hook_timer.stop()
 		$CaughtFishSound.play()
 		color_rect.visible = false
-		
+		#queue_free()
 	else:
 		fishingCaught = false
 		$"%Fish Outcome".text = "Fish escaped..."
