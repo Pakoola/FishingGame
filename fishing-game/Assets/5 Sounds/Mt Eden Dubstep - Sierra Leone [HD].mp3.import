@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cduecasjuv7ki"
+path="res://.godot/imported/Mt Eden Dubstep - Sierra Leone [HD].mp3-c8de62c5af6ec7404627dd2deb126186.mp3str"
+
+[deps]
+
+source_file="res://Assets/5 Sounds/Mt Eden Dubstep - Sierra Leone [HD].mp3"
+dest_files=["res://.godot/imported/Mt Eden Dubstep - Sierra Leone [HD].mp3-c8de62c5af6ec7404627dd2deb126186.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c6c4k62ct1gn0" path="res://Scene/fisherman.tscn" id="4_ws3em"]
 [ext_resource type="PackedScene" uid="uid://b5jpefuv27rlu" path="res://Scene/boat.tscn" id="5_78uu4"]
 [ext_resource type="PackedScene" uid="uid://ckdmsd2nw2ivo" path="res://Scene/UiText/enterBoatText.tscn" id="6_sa811"]
+[ext_resource type="AudioStream" uid="uid://cduecasjuv7ki" path="res://Assets/5 Sounds/Mt Eden Dubstep - Sierra Leone [HD].mp3" id="7_thrs3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sa811"]
 texture = ExtResource("1_xtak6")
@@ -733,3 +734,8 @@ offset_left = 128.0
 offset_top = 415.0
 offset_right = 346.0
 offset_bottom = 438.0
+
+[node name="FishingBackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=1675840791]
+stream = ExtResource("7_thrs3")
+volume_db = -27.369
+parameters/looping = true
